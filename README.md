@@ -75,19 +75,19 @@
     - Uploading sample data in S3 bucket for metadata inference by the Glue crawler. We can delete this as soon as we run the initial scanner.
     ![Upload Sample Data to S3](./Images_Watermarked/12%20putting%20sample%20data%20in%20our%20s3%20bucket%20so%20that%20metadata%20can%20be%20inferred%20by%20the%20glue%20crawler.png?raw=true)
 
-13. **Successful Crawler Run**
-    - Confirmation of a successful run of the Glue crawler, indicating successful metadata extraction.
+13. **Crawler Run**
+    - Glue Crawler triggered due to file upload into s3 bucket and ran successfully.
     ![Crawler Run Successful](./Images_Watermarked/13%20Crawler%20run%20successful.png?raw=true)
 
 14. **Metadata Table Created Successfully**
-    - Successful creation of metadata tables in AWS Glue, reflecting the structured data from Redshift and S3.
+    - Metadata tables created by the crawler based on the CSV data in the s3 bucket.
     ![Metadata Table Creation Successful](./Images_Watermarked/14%20metadata%20table%20created%20successfully.png?raw=true)
 
 15. **Crawlers Picked Metadata from Both Redshift Tables and S3 Data Files**
     - AWS Glue crawlers successfully extracted metadata from both Redshift tables and S3 data files.
     ![Crawlers Metadata Extraction](./Images_Watermarked/15%20Crawlers%20picked%20metadata%20in%20both%20redshift%20tables%20and%20s3%20data%20files.png?raw=true)
 
-16. **Filter to Show Only Flights Delayed by 60 Minutes or More When Departing**
+16. **Glue job to filter only Flights delayed by 60 Minutes or More When Departing**
     - Applying filters in the data query to show only flights that are delayed by 60 minutes or more upon departure.
     ![Filter Flights by Delay](./Images_Watermarked/16%20Filter%20to%20show%20only%20flights%20which%20are%20late%20by%2060%20minutes%20or%20more%20when%20departing.png?raw=true)
 
@@ -111,8 +111,8 @@
     - Aligning the schema of the processed data to fit the Redshift destination table specifications.
     ![Schema Adjustment for Destination Table](./Images_Watermarked/21%20Changing%20the%20schema%20to%20match%20the%20redshift%20destination%20table.png?raw=true)
 
-22. **Final Redshift Target Table**
-    - Overview of the target Redshift table containing the fully processed and joined flight data.
+22. **Loading data into Redshift target table**
+    - Node to load the transformed data into Redshift.
     ![Redshift Target Table](./Images_Watermarked/22%20Redshift%20target%20table.png?raw=true)
 
 23. **Overview of the Complete Glue ETL Pipeline**
@@ -124,7 +124,7 @@
     ![Enable Job Bookmarking](./Images_Watermarked/24%20enable%20job%20bookmarking%20for%20incremental%20ingestion%20and%20setting%20workers%20to%202%20for%20incremental%20data%20ingestion.png?raw=true)
 
 25. **Enabling EventBridge Notifications for S3 Bucket**
-    - Setting up notifications via AWS EventBridge for the source S3 bucket to trigger processes based on data updates.
+    - Setting up notifications via AWS EventBridge for the source S3 bucket to trigger the step function based on data updates in the s3 bucket through eventbridge.
     ![Enable EventBridge Notifications](./Images_Watermarked/25%20Enable%20eventbridge%20notifications%20for%20the%20source%20bucket.png?raw=true)
 
 26. **Adding Crawler to Step Function**
@@ -156,11 +156,11 @@
     ![Success Notification Sent](./Images_Watermarked/31%20Notifications%20sending%20incase%20of%20failures.png?raw=true)
 
 33. **Sending Failed Notification**
-    - Adding SNS for failed notifications
+    - Sending failure notifications via AWS SNS if the data pipeline fails.
     ![Success Notification](./Images_Watermarked/33%20success%20notification%20sent%20.png?raw=true)
 
-34. **Overall Step Function Diagram**
-    - Displaying the overall AWS Step Function diagram, detailing the complete process flow and integrations.
+34. **Complete Step Function Workflow**
+    - Displaying the AWS Step Function, detailing the complete process flow and integrations.
     ![Step Function Diagram](./Images_Watermarked/34%20Overall%20Step%20Function%20Diagram.png?raw=true)
 
 35. **Creating an EventBridge Rule**
@@ -192,7 +192,7 @@
     ![Upload File to S3](./Images_Watermarked/41%20Upload%20a%20new%20file%20to%20the%20s3%20bucket.png?raw=true)
 
 42. **Step Function Triggered**
-    - AWS Step Function triggering in response to new data being uploaded to S3.
+    - AWS Step Function triggered in response to new data being uploaded to S3.
     ![Step Function Started](./Images_Watermarked/42%20step%20function%20started%20.png?raw=true)
 
 43. **Graph View of Step Function showing that glue crawler step is running**
