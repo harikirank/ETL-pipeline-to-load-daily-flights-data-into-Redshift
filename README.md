@@ -212,7 +212,7 @@
     ![Step Function Successful](./Images_Watermarked/46%20Step%20Function%20Execution%20Successful.png?raw=true)
 
 47. **Step Function Success Notification**
-    - Notification Sent confirming the successful execution of the step function.
+    - Notification Sent confirming the successful execution of the step function and data loaded into the data warehouse.
     ![Success Notification Email](./Images_Watermarked/47%20Step%20function%20success%20notification%20sent%20to%20email.png?raw=true)
 
 48. **Data Successfully Ingested into Redshift**
@@ -220,7 +220,7 @@
     ![Data Ingested into Redshift](./Images_Watermarked/48%20Data%20Successfully%20ingested%20into%20the%20redshfit%20data%20warehouse.png?raw=true)
 
 49. **Analytics on Delayed Flights**
-    - Displaying analytics results on count of flights delayed by at least one hour, demonstrating the data processing and analysis capabilities.
+    - Querying the data to display the count of flights.
     ![Analytics on Delayed Flights](./Images_Watermarked/49%20Number%20of%20flights%20delayed%20by%20atleast%201hr.png?raw=true)
 
 # Potential Next Steps
