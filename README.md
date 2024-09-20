@@ -1,5 +1,5 @@
 # Daily Flight Data Ingestion
-# An AWS data pipeline for ingesting the daily data of flights and load it into Redshift.
+# Data pipeline for ingesting daily flights data and load it into Redshift.
 
 # Prerequisites
 * A good understanding of AWS Services: S3, Redshift, Glue, AWS Step functions, EventBridge.
