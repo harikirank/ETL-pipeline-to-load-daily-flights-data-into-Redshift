@@ -10,7 +10,7 @@
 ### This project aims to leverage AWS services to process large amount of daily flight data and leverages a redshift data warehouse which can then be used by end users for comprehensive analysis and reporting.
 
 # Architecture Diagram
-![Architecture Diagram](./Architecture_Diagram/Architecture_Diagram_Airline_Data_Ingestion.png?raw=true)
+![Architecture Diagram](./Architecture_Diagram/ETL-pipeline-to-load-daily-flights-data-into-Redshift.png?raw=true)
 
 # AWS Glue Visual ETL Diagram
    ![ETL Pipeline](./Images_Watermarked/23%20Whole%20Pipeline.png?raw=true)
